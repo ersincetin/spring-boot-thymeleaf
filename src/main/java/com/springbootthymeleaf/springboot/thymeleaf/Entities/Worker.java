@@ -8,7 +8,7 @@ public class Worker {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
     @Column(name = "name")
     private String name;
     @Column(name = "lastname")
@@ -26,11 +26,11 @@ public class Worker {
         this.shift_type = shift_type;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
