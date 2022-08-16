@@ -37,13 +37,13 @@ public class WorkerManager implements IWorkerService {
 
     @Override
     @Transactional
-    public void delete(Worker worker) {
-        this.workerDal.delete(worker);
+    public void delete(long id) {
+        this.workerDal.delete(id);
     }
 
     @Override
     @Transactional
-    public Worker getById(int id) {
+    public Worker getById(long id) {
         return this.workerDal.getById(id);
     }
 }

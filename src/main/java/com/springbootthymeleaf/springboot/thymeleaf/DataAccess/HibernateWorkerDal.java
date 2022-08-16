@@ -29,24 +29,25 @@ public class HibernateWorkerDal implements IWorkerDal {
     @Override
     @Transactional
     public void add(Worker worker) {
-
+        this.session.saveOrUpdate(worker);
     }
 
     @Override
     @Transactional
     public void update(Worker worker) {
-
+        this.session.saveOrUpdate(worker);
     }
 
     @Override
     @Transactional
-    public void delete(Worker worker) {
-
+    public void delete(long id) {
+        Worker worker = this.session.get(Worker.class, id);
+        this.session.delete(worker);
     }
 
     @Override
     @Transactional
-    public Worker getById(int id) {
+    public Worker getById(long id) {
         Worker worker = this.session.get(Worker.class, id);
         return worker;
     }

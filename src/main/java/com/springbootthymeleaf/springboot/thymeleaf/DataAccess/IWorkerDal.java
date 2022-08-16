@@ -9,6 +9,6 @@ public interface IWorkerDal {
     List<Worker> getAll();
     void add(Worker worker);
     void update(Worker worker);
-    void delete(Worker worker);
-    Worker getById(int id);
+    void delete(long id);
+    Worker getById(long id);
 }
