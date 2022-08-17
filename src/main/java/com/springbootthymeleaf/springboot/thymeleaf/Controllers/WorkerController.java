@@ -17,9 +17,14 @@ public class WorkerController {
     }
 
     @RequestMapping(value = "/")
-    public String viewHomePage(Model model) {
+    public String viewHomePage(Model model){
         model.addAttribute("allWorkerList", workerService.getAll());
         return "index";
+    }
+    @RequestMapping(value = "/workerlist")
+    public String viewWorkerListPage(Model model) {
+        model.addAttribute("allWorkerList", workerService.getAll());
+        return "worker_list";
     }
 
     @RequestMapping(value = "/addworker")
